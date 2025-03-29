@@ -7,6 +7,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import MobileSidebar from '../sidebar/MobileSidebar'
 import styles from './Header.module.scss'
+import StoreSwitcher from './StoreSwitcher'
 
 export default function Header() {
 	const { user, isLoading } = useProfile()
@@ -20,6 +21,7 @@ export default function Header() {
 				) : (
 					user && (
 						<>
+							<StoreSwitcher items={user.stores} />
 							<Link href={DASHBOARD_URL.home()}>
 								<Image
 									src={user?.picture}
