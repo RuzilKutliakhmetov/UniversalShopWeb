@@ -9,7 +9,7 @@ import { formatPrice } from '@/utils/string/format-price'
 
 import styles from '../HeaderCart.module.scss'
 
-// import { CartActions } from './CartActions'
+import { CartActions } from './CartActions'
 
 interface CartItemProps {
 	item: ICartItem
@@ -24,7 +24,7 @@ export function CartItem({ item }: CartItemProps) {
 			<div className={styles.right}>
 				<h2>{item.product.title}</h2>
 				<p>{formatPrice(item.product.price)}</p>
-				{/* <CartActions item={item} /> */}
+				<CartActions item={item} />
 			</div>
 		</div>
 	)
